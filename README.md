@@ -47,7 +47,7 @@ The public website should be scaffolded with:
 - TypeScript
 - Tailwind CSS
 
-The actual application scaffold will be added by Codex after reviewing the project specification and brand guide.
+The application uses Next.js App Router, TypeScript, and Tailwind CSS. Source files live in `src/`, with route files under `src/app` and reusable layout, navigation, section, and UI primitives under `src/components`.
 
 ## Repository guidance
 
@@ -118,9 +118,7 @@ public/images/hero-package.jpg
 
 ## Development
 
-Development commands will be finalized after the Next.js project is scaffolded.
-
-Expected workflow:
+Development workflow:
 
 ```bash
 npm install
@@ -147,4 +145,4 @@ Use centrally managed configuration for operational information that may change 
 
 ## Current status
 
-Repository foundation established. The next development task is to scaffold the Next.js website and create the global shell/design system without building the full page content yet.
+The Next.js foundation, global shell, design tokens, shared UI primitives, and V1 route placeholders are established. Full page design and content remain intentionally out of scope for this scaffold.
