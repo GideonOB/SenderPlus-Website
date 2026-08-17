@@ -113,7 +113,7 @@ Recommended initial paths:
 
 ```text
 public/brand/senderplus-logo.png
-public/images/hero-package.jpg
+public/brand/hero-package.jpg
 ```
 
 ## Development
