@@ -101,7 +101,7 @@ See `BRAND_GUIDE.md` for the full visual direction.
 
 ## Assets
 
-When available, place approved assets under:
+Binary assets are intentionally uploaded separately after the text-only Codex draft PR is created. Use this structure:
 
 ```text
 public/

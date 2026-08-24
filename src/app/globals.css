@@ -7,8 +7,8 @@
   --color-charcoal: #353a3c;
   --color-mist: #e8ecec;
   --color-canvas: #fbfaf7;
-  --font-sans: var(--font-manrope);
-  --font-display: var(--font-space-grotesk);
+  --font-sans: "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-display: "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 :root { color-scheme: light; }
@@ -18,9 +18,17 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--color-canvas);
   color: var(--color-ink);
-  font-family: var(--font-manrope), sans-serif;
+  font-family: "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
 }
+
+.editorial-link::after {
+  content: "↗";
+  margin-left: 0.55rem;
+  transition: transform 180ms ease;
+}
+
+.editorial-link:hover::after { transform: translate(0.15rem, -0.15rem); }
 
 ::selection { background: var(--color-sender-blue); color: var(--color-ink); }
 
