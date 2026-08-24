@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -38,10 +39,9 @@ export default function Home() {
           <p className="mt-8 max-w-xl text-base leading-7 text-white/72 sm:text-lg sm:leading-8">Fast, secure, tech-enabled package delivery built for students, businesses, and everyday senders in Ghana.</p>
           <div className="mt-9 flex flex-wrap gap-3"><Button href="/send" className="bg-sender-blue text-ink hover:bg-white">Send a Package</Button><Button href="/track" variant="secondary" className="border-white/30 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div>
         </div>
-        <div className="relative -mx-5 flex h-[52svh] min-h-[390px] items-end overflow-hidden bg-sender-blue p-5 sm:-mx-8 sm:p-8 lg:mx-0 lg:h-[calc(100svh-5rem)] lg:min-h-[650px]">
-          <div className="absolute -right-[12%] top-[12%] h-[72%] w-[72%] border-[clamp(2rem,6vw,6rem)] border-white/20" aria-hidden="true" />
-          <div className="absolute left-[12%] top-[18%] h-[42%] w-[48%] bg-[#b98b5f] shadow-[2rem_2rem_0_rgba(255,255,255,.18)]" aria-hidden="true"><span className="absolute left-1/2 top-0 h-full w-px bg-ink/20" /><span className="absolute left-0 top-1/2 h-px w-full bg-ink/20" /></div>
-          <p className="relative max-w-xs font-display text-3xl font-bold leading-tight tracking-[-0.04em] text-ink">Approved Sender+ photography will appear here once the assets are uploaded directly to GitHub.</p>
+        <div className="relative -mx-5 h-[clamp(17rem,68vw,32rem)] overflow-hidden sm:-mx-8 md:h-[32rem] lg:mx-0 lg:h-[calc(100svh-5rem)] lg:min-h-[650px]">
+          <Image src="/images/hero-package.jpg" alt="A Sender+ delivery representative holding a package beside a branded delivery vehicle" fill priority sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover object-[48%_center] sm:object-[50%_center] lg:object-[47%_center] xl:object-center" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" aria-hidden="true" />
           <p className="absolute bottom-5 right-5 max-w-[13rem] text-right text-xs font-semibold leading-5 text-white/90 sm:bottom-8 sm:right-8">Bridging Ghana<br />One Package at a Time.</p>
         </div>
       </Container>
@@ -74,7 +74,7 @@ export default function Home() {
 
     <Section aria-labelledby="app-title" className="overflow-hidden bg-ink text-white">
       <Container><div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24"><div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-sender-blue">Sender+ digital experience</p><h2 id="app-title" className="mt-4 font-display text-6xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-7xl">Delivery, right in your hands.</h2><p className="mt-7 max-w-lg text-lg leading-8 text-white/68">Manage your delivery through the standalone Sender+ experience. The website keeps the handoff simple, so you can continue where sending and tracking happen.</p><Button href="/send" className="mt-9 bg-sender-blue text-ink hover:bg-white">Open Sender+</Button></div>
-      <div className="relative mx-auto w-full max-w-md py-6" aria-label="Presentation placeholder for the Sender+ digital experience"><div className="absolute inset-y-0 left-1/2 w-px bg-sender-blue/30" /><div className="relative ml-auto w-[82%] border border-white/20 bg-white p-5 text-ink shadow-2xl sm:p-7"><div className="flex items-center justify-between border-b border-ink/15 pb-5"><span className="font-display text-lg font-extrabold tracking-[-0.06em]"><span className="text-[#087a9d]">SEN</span><span className="text-sender-red">DER</span><span className="text-[#087a9d]">+</span></span><span className="h-2 w-2 rounded-full bg-sender-blue" /></div><div className="py-12 sm:py-16"><p className="text-xs font-bold uppercase tracking-[0.18em] text-sender-red">Your delivery</p><p className="mt-3 font-display text-3xl font-bold tracking-[-0.045em]">Ready when you are.</p><div className="mt-10 h-1 w-full bg-mist"><div className="h-full w-2/3 bg-sender-blue" /></div></div><p className="border-t border-ink/15 pt-5 text-xs text-charcoal">Presentation placeholder · App visuals to come</p></div></div></div></Container>
+      <div className="relative mx-auto w-full max-w-md py-6" aria-label="Presentation placeholder for the Sender+ digital experience"><div className="absolute inset-y-0 left-1/2 w-px bg-sender-blue/30" /><div className="relative ml-auto w-[82%] border border-white/20 bg-white p-5 text-ink shadow-2xl sm:p-7"><div className="flex items-center justify-between border-b border-ink/15 pb-5"><Image src="/brand/senderplus-logo.png" alt="Sender+" width={784} height={303} className="h-auto w-24" /><span className="h-2 w-2 rounded-full bg-sender-blue" /></div><div className="py-12 sm:py-16"><p className="text-xs font-bold uppercase tracking-[0.18em] text-sender-red">Your delivery</p><p className="mt-3 font-display text-3xl font-bold tracking-[-0.045em]">Ready when you are.</p><div className="mt-10 h-1 w-full bg-mist"><div className="h-full w-2/3 bg-sender-blue" /></div></div><p className="border-t border-ink/15 pt-5 text-xs text-charcoal">Presentation placeholder · App visuals to come</p></div></div></div></Container>
     </Section>
 
     <Section aria-labelledby="ghana-title" className="bg-white">
