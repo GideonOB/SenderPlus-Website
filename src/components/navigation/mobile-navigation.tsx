@@ -15,7 +15,7 @@ export function MobileNavigation() {
     return () => window.removeEventListener("keydown", close);
   }, [open]);
 
-  return <div className="md:hidden">
+  return <div className="lg:hidden">
     <button type="button" aria-expanded={open} aria-controls={menuId} onClick={() => setOpen((value) => !value)} className="flex min-h-12 min-w-12 items-center justify-center rounded-md border border-ink/20" aria-label={open ? "Close navigation" : "Open navigation"}>
       <span aria-hidden="true" className="text-xl leading-none">{open ? "×" : "☰"}</span>
     </button>
