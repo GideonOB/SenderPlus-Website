@@ -35,7 +35,7 @@ export default function Home() {
       <Container className="grid min-h-[calc(100svh-5rem)] items-center gap-10 pb-12 pt-12 md:pb-16 md:pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-0 lg:pb-0 lg:pt-0">
         <div className="relative z-10 py-4 lg:py-20">
           <p className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-sender-blue"><span className="h-px w-8 bg-sender-blue" />Delivery, built for your region</p>
-          <h1 className="max-w-3xl font-display text-[clamp(3.45rem,8vw,7.9rem)] font-bold leading-[0.86] tracking-[-0.065em] text-balance">Your package.<br /><span className="text-sender-blue">Anywhere</span> in your region.<br />Delivered.</h1>
+          <h1 className="max-w-3xl font-display text-[clamp(3.45rem,8vw,7.9rem)] font-bold leading-[0.86] tracking-[-0.065em] text-balance">Your package.<br /><span className="text-sender-blue">Anywhere</span> in your region.<br /><span className="text-sender-red">Delivered.</span></h1>
           <p className="mt-8 max-w-xl text-base leading-7 text-white/72 sm:text-lg sm:leading-8">Fast, secure, tech-enabled package delivery built for students, businesses, and everyday senders in Ghana.</p>
           <div className="mt-9 flex flex-wrap gap-3"><Button href="/send" className="bg-sender-blue text-ink hover:bg-white">Send a Package</Button><Button href="/track" variant="secondary" className="border-white/30 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div>
         </div>
@@ -82,7 +82,7 @@ export default function Home() {
     </Section>
 
     <Section aria-labelledby="final-title" className="bg-sender-red text-white">
-      <Container><div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end"><div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-white/70">Start a delivery</p><h2 id="final-title" className="mt-4 font-display text-7xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-8xl">Ready to send?</h2></div><div className="flex flex-wrap gap-3"><Button href="/send" className="bg-white text-ink hover:bg-sender-blue">Send a Package</Button><Button href="/track" variant="secondary" className="border-white/40 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div></div></Container>
+      <Container><div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end"><div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-white/70">Start a delivery</p><h2 id="final-title" className="mt-4 font-display text-7xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-8xl">Ready to send?</h2></div><div className="flex flex-wrap gap-3"><Button href="/send" variant="light">Send a Package</Button><Button href="/track" variant="secondary" className="border-white/40 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div></div></Container>
     </Section>
   </>;
 }
