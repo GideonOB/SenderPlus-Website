@@ -15,8 +15,9 @@ export function MobileNavigation() {
     return () => window.removeEventListener("keydown", close);
   }, [open]);
 
-  return <div className="ml-auto min-[900px]:hidden">
-    <button type="button" aria-expanded={open} aria-controls={menuId} onClick={() => setOpen((value) => !value)} className="flex min-h-12 min-w-12 items-center justify-center rounded-md border border-ink/20" aria-label={open ? "Close navigation" : "Open navigation"}>
+  return <div className="ml-auto lg:hidden">
+    <button type="button" aria-expanded={open} aria-controls={menuId} onClick={() => setOpen((value) => !value)} className="flex min-h-12 items-center justify-center gap-2 rounded-md border border-ink/20 px-3 font-bold" aria-label={open ? "Close navigation" : "Open navigation"}>
+      <span>Menu</span>
       <span aria-hidden="true" className="text-xl leading-none">{open ? "×" : "☰"}</span>
     </button>
     {open && <div id={menuId} className="absolute inset-x-0 top-full border-t border-ink/10 bg-canvas px-5 py-6 shadow-lg">
