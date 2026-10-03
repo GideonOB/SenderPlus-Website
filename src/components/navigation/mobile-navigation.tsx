@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
+import { usePathname } from "next/navigation";
 import { primaryNavigation } from "@/content/site";
 
 export function MobileNavigation() {
   const [open, setOpen] = useState(false);
   const menuId = useId();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!open) return;
@@ -15,14 +17,14 @@ export function MobileNavigation() {
     return () => window.removeEventListener("keydown", close);
   }, [open]);
 
-  return <div className="ml-auto lg:hidden">
+  return <div className="ml-auto min-[1120px]:hidden">
     <button type="button" aria-expanded={open} aria-controls={menuId} onClick={() => setOpen((value) => !value)} className="flex min-h-12 items-center justify-center gap-2 rounded-md border border-ink/20 px-3 font-bold" aria-label={open ? "Close navigation" : "Open navigation"}>
       <span>Menu</span>
       <span aria-hidden="true" className="text-xl leading-none">{open ? "×" : "☰"}</span>
     </button>
     {open && <div id={menuId} className="absolute inset-x-0 top-full border-t border-ink/10 bg-canvas px-5 py-6 shadow-lg">
       <nav aria-label="Mobile navigation" className="flex flex-col">
-        {primaryNavigation.map((item) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="border-b border-ink/10 py-4 font-bold">{item.label}</Link>)}
+        {primaryNavigation.map((item) => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined} onClick={() => setOpen(false)} className={`border-b border-ink/10 py-4 font-bold ${pathname === item.href ? "text-sender-red" : "text-ink"}`}>{item.label}</Link>)}
         <div className="mt-6 grid grid-cols-2 gap-3"><Link href="/track" onClick={() => setOpen(false)} className="flex min-h-12 items-center justify-center rounded-md border border-ink/25 font-bold">Track</Link><Link href="/send" onClick={() => setOpen(false)} className="flex min-h-12 items-center justify-center rounded-md bg-ink font-bold text-white">Send</Link></div>
       </nav>
     </div>}
