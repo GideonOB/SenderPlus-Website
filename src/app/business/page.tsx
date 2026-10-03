@@ -39,7 +39,7 @@ const useCases = [
   ["Local retail", "A customer buys from a shop and wants the package delivered elsewhere in the same supported region."],
   ["Repeat orders", "A growing merchant is handling more customer deliveries and wants a simpler, more consistent process."],
   ["Direct to customer", "A business wants the experience from dispatch to handoff to feel as considered as the sale."],
-  ["Small-business fulfilment", "An entrepreneur needs more attention for selling, sourcing, producing, and serving—not coordinating every package movement."],
+  ["Small-business fulfilment", "An entrepreneur needs more attention for selling, sourcing, producing, and serving, not coordinating every package movement."],
 ] as const;
 
 const attention = ["Serving customers", "Sourcing products", "Managing inventory", "Marketing", "Creating content", "Fulfilling new orders", "Growing the business"];
@@ -70,8 +70,8 @@ export default function BusinessPage() {
       <Container className="relative">
         <div className="grid gap-10 lg:grid-cols-[1.18fr_0.82fr] lg:items-end">
           <div>
-            <p className="flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.2em] text-sender-blue"><span className="h-px w-8 bg-sender-blue" />Sender+ for Business</p>
-            <h1 className="mt-6 max-w-5xl font-display text-[clamp(3.7rem,9vw,8.8rem)] font-bold leading-[0.82] tracking-[-0.07em]">You sell it.<br /><span className="text-sender-red">We deliver it.</span></h1>
+            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-sender-blue">Sender+ for Business</p>
+            <h1 className="mt-6 max-w-5xl font-display text-[clamp(3.7rem,9vw,8.8rem)] font-bold leading-[0.9] tracking-[-0.07em]">You sell it.<br /><span className="text-sender-red">We deliver it.</span></h1>
           </div>
           <div className="max-w-xl border-t border-white/20 pt-7 lg:mb-2 lg:justify-self-end">
             <p className="text-lg leading-8 text-white/72">Sender+ helps online sellers, shops, entrepreneurs, and growing businesses move customer orders more conveniently within supported areas.</p>
@@ -92,7 +92,7 @@ export default function BusinessPage() {
 
     <Section aria-labelledby="business-happens-title" className="bg-canvas">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-24"><header><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-sender-red">Made for real commerce</p><h2 id="business-happens-title" className="mt-4 max-w-3xl font-display text-5xl font-bold leading-[0.92] tracking-[-0.055em] sm:text-7xl">Built for the way business happens.</h2></header><div className="max-w-xl self-end text-lg leading-8 text-charcoal"><p>Many businesses receive orders through social media, messaging, referrals, direct contact, or an online storefront.</p><p className="mt-6 font-display text-3xl font-bold leading-tight tracking-[-0.04em] text-ink">However the order starts, the next question is the same:<br /><span className="text-sender-red">How does it get to the customer?</span></p></div></div>
+        <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16"><header><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-sender-red">Made for real commerce</p><h2 id="business-happens-title" className="mt-4 max-w-3xl font-display text-5xl font-bold leading-[0.98] tracking-[-0.055em] sm:text-6xl xl:text-7xl"><span className="lg:block">Built for the way </span><span className="lg:whitespace-nowrap">business happens.</span></h2></header><div className="max-w-xl self-end text-lg leading-8 text-charcoal"><p>Many businesses receive orders through social media, messaging, referrals, direct contact, or an online storefront.</p><p className="mt-6 font-display text-3xl font-bold leading-tight tracking-[-0.04em] text-ink">However the order starts, the next question is the same:<br /><span className="text-sender-red">How does it get to the customer?</span></p></div></div>
         <ul className="mt-14 grid grid-cols-2 border-l border-t border-ink/20 sm:grid-cols-3 lg:mt-20">{sellers.map((seller, index) => <li key={seller} className="group min-h-32 border-b border-r border-ink/20 p-4 sm:min-h-40 sm:p-6"><span className="text-[0.65rem] font-bold text-sender-red">0{index + 1}</span><p className="mt-8 font-display text-lg font-bold uppercase leading-tight tracking-[-0.02em] transition-colors group-hover:text-sender-red sm:text-2xl">{seller}</p></li>)}</ul>
       </Container>
     </Section>
@@ -103,7 +103,7 @@ export default function BusinessPage() {
     </Section>
 
     <Section aria-labelledby="brand-title" className="bg-sender-blue">
-      <Container><div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-24"><header><p className="text-xs font-extrabold uppercase tracking-[0.18em]">The customer remembers the handoff</p><h2 id="brand-title" className="mt-4 max-w-3xl font-display text-6xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-8xl">Delivery is part of your brand.</h2><p className="mt-7 max-w-xl text-lg leading-8 text-ink/75">Customers do not always separate the product from the experience of receiving it. A smooth handoff can make the entire business feel more professional.</p></header><div className="divide-y divide-ink/25 border-y border-ink/25">{brandExperience.map(([title, copy], index) => <article key={title} className="grid grid-cols-[2.5rem_1fr] gap-3 py-6 sm:grid-cols-[3.5rem_0.55fr_1fr] sm:items-center"><span className="text-xs font-bold">0{index + 1}</span><h3 className="font-display text-xl font-bold sm:text-2xl">{title}</h3><p className="col-start-2 text-sm leading-6 text-ink/70 sm:col-start-auto">{copy}</p></article>)}</div></div></Container>
+      <Container><div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-24"><header><p className="text-xs font-extrabold uppercase tracking-[0.18em]">The customer remembers the handoff</p><h2 id="brand-title" className="mt-4 max-w-3xl font-display text-6xl font-bold leading-[1.02] tracking-[-0.06em] sm:text-8xl">Delivery is part of your brand.</h2><p className="mt-7 max-w-xl text-lg leading-8 text-ink/75">Customers do not always separate the product from the experience of receiving it. A smooth handoff can make the entire business feel more professional.</p></header><div className="divide-y divide-ink/25 border-y border-ink/25">{brandExperience.map(([title, copy], index) => <article key={title} className="grid grid-cols-[2.5rem_1fr] gap-3 py-6 sm:grid-cols-[3.5rem_0.55fr_1fr] sm:items-center"><span className="text-xs font-bold">0{index + 1}</span><h3 className="font-display text-xl font-bold sm:text-2xl">{title}</h3><p className="col-start-2 text-sm leading-6 text-ink/70 sm:col-start-auto">{copy}</p></article>)}</div></div></Container>
     </Section>
 
     <Section aria-labelledby="use-cases-title" className="bg-white">
@@ -129,7 +129,7 @@ export default function BusinessPage() {
     </Section>
 
     <Section aria-labelledby="business-cta-title" className="bg-ink text-white">
-      <Container><div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-sender-blue">Start with the next order</p><h2 id="business-cta-title" className="mt-4 max-w-4xl font-display text-6xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-8xl">Your next order has somewhere to go.</h2><p className="mt-7 max-w-xl text-lg leading-8 text-white/65">Start a delivery with Sender+ and keep your attention where it belongs—on the business.</p></div><div className="flex flex-wrap gap-3"><Button href="/send" className="bg-sender-blue text-ink hover:bg-white">Send a Package</Button><Button href="/track" variant="secondary" className="border-white/35 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div></div></Container>
+      <Container><div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-sender-blue">Start with the next order</p><h2 id="business-cta-title" className="mt-4 max-w-4xl font-display text-6xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-8xl">Your next order has somewhere to go.</h2><p className="mt-7 max-w-xl text-lg leading-8 text-white/65">Start a delivery with Sender+ and keep your attention where it belongs: on the business.</p></div><div className="flex flex-wrap gap-3"><Button href="/send" className="bg-sender-blue text-ink hover:bg-white">Send a Package</Button><Button href="/track" variant="secondary" className="border-white/35 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div></div></Container>
     </Section>
   </>;
 }
