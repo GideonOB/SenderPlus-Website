@@ -17,6 +17,7 @@ type SubmissionState = "idle" | "submitting" | "success" | "error";
 export function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const [submissionState, setSubmissionState] = useState<SubmissionState>("idle");
+  const [hasMiddleName, setHasMiddleName] = useState(false);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -38,6 +39,7 @@ export function ContactForm() {
       if (!response.ok) throw new Error("Form submission failed");
 
       formRef.current?.reset();
+      setHasMiddleName(false);
       setSubmissionState("success");
     } catch {
       setSubmissionState("error");
@@ -62,10 +64,25 @@ export function ContactForm() {
 
     <div className="grid gap-x-6 gap-y-6 sm:grid-cols-2">
       <label className="text-sm font-bold text-ink">
-        Name <span className="text-sender-red" aria-hidden="true">*</span>
+        First name <span className="text-sender-red" aria-hidden="true">*</span>
         <span className="sr-only">required</span>
-        <input className={fieldStyles} type="text" name="name" autoComplete="name" required disabled={submissionState === "submitting"} />
+        <input className={fieldStyles} type="text" name="first-name" autoComplete="given-name" required disabled={submissionState === "submitting"} />
       </label>
+      <label className="text-sm font-bold text-ink">
+        Surname <span className="text-sender-red" aria-hidden="true">*</span>
+        <span className="sr-only">required</span>
+        <input className={fieldStyles} type="text" name="surname" autoComplete="family-name" required disabled={submissionState === "submitting"} />
+      </label>
+      <div className="sm:col-span-2">
+        <label className="inline-flex min-h-12 cursor-pointer items-center gap-3 text-sm font-bold text-ink">
+          <input type="checkbox" checked={hasMiddleName} onChange={(event) => setHasMiddleName(event.target.checked)} aria-controls="middle-name-field" disabled={submissionState === "submitting"} className="h-5 w-5 accent-sender-red" />
+          I have a middle name
+        </label>
+        {hasMiddleName && <label id="middle-name-field" className="mt-2 block text-sm font-bold text-ink">
+          Middle name <span className="font-normal text-charcoal">(optional)</span>
+          <input className={fieldStyles} type="text" name="middle-name" autoComplete="additional-name" disabled={submissionState === "submitting"} />
+        </label>}
+      </div>
       <label className="text-sm font-bold text-ink">
         Email <span className="text-sender-red" aria-hidden="true">*</span>
         <span className="sr-only">required</span>
@@ -104,4 +121,3 @@ export function ContactForm() {
     </div>
   </form>;
 }
-
