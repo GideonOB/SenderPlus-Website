@@ -13,7 +13,7 @@ export default function StudentsPage() {
     <section className="bg-ink py-16 text-white sm:py-24 lg:py-28">
       <Container>
         <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-sender-blue">Sender+ for Students</p>
-        <h1 className="mt-5 max-w-5xl font-display text-5xl font-bold leading-[1.02] tracking-[-0.055em] sm:text-7xl lg:text-8xl">Campus life is busy enough.<br /><span className="text-sender-blue">Getting your package shouldn’t be.</span></h1>
+        <h1 className="mt-5 max-w-5xl font-display text-5xl font-bold leading-[1.02] tracking-[-0.055em] sm:text-7xl lg:text-8xl">Campus life is <span className="text-sender-red">busy</span> enough.<br /><span className="text-sender-blue">Getting your package shouldn’t be.</span></h1>
         <p className="mt-8 max-w-2xl text-lg leading-8 text-white/72">Sender+ is being built to make moving packages and belongings between pickup points, home, and campus more convenient.</p>
       </Container>
     </section>
