@@ -1,9 +1,9 @@
 const configuredAppUrl = process.env.NEXT_PUBLIC_APP_URL?.trim().replace(/\/$/, "");
 
-/** App paths are intentionally unset until the standalone app supplies them. */
+/** Operational actions are handled by the standalone Sender+ app. */
 export const appConfig = {
   baseUrl: configuredAppUrl || null,
-  paths: { send: null, track: null } as const,
+  paths: { send: "/submit", track: "/track" } as const,
 };
 
 export type AppDestination = keyof typeof appConfig.paths;
