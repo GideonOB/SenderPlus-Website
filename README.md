@@ -66,12 +66,14 @@ Use `.env.local` for local values.
 Expected initial variable:
 
 ```env
-NEXT_PUBLIC_APP_URL=
+NEXT_PUBLIC_APP_URL=https://senderplus.netlify.app
 ```
 
 Do not commit `.env.local` or other secret-bearing environment files.
 
 See `.env.example` for the committed template.
+
+Configure this public variable manually in the marketing website's Netlify environment settings before building and deploying. `SenderPlus-Website` hands off to the standalone operational app at `https://senderplus.netlify.app`: `/send` links to `/submit`, and `/track` links to `/track`. Both app routes require authentication. If the variable is unset, the bridge pages show an app-link-unavailable message.
 
 ## Existing app boundary
 

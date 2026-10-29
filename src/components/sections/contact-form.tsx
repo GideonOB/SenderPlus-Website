@@ -30,7 +30,8 @@ export function ContactForm() {
     formData.forEach((value, key) => body.append(key, value.toString()));
 
     try {
-      const response = await fetch("/", {
+      // Post to the static Netlify form endpoint rather than the Next.js homepage.
+      const response = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: body.toString(),
@@ -111,7 +112,7 @@ export function ContactForm() {
       <div>
         <p className="text-xs leading-5 text-charcoal">Please don&apos;t include sensitive personal or payment information.</p>
         <div className="mt-2 min-h-6 text-sm font-bold" aria-live="polite" aria-atomic="true">
-          {submissionState === "success" && <p className="text-ink">Thanks. Your message has been sent.</p>}
+          {submissionState === "success" && <p className="text-ink">Thank you for contacting Sender+. We’ve received your message, and our customer service team will be in touch with you soon.</p>}
           {submissionState === "error" && <p className="text-sender-red" role="alert">We couldn&apos;t send your message. Please try again.</p>}
         </div>
       </div>
