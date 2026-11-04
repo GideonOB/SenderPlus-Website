@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -103,7 +104,29 @@ export default function BusinessPage() {
     </Section>
 
     <Section aria-labelledby="brand-title" className="bg-sender-blue">
-      <Container><div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-24"><header><p className="text-xs font-extrabold uppercase tracking-[0.18em]">The customer remembers the handoff</p><h2 id="brand-title" className="mt-4 max-w-3xl font-display text-6xl font-bold leading-[1.02] tracking-[-0.06em] sm:text-8xl">Delivery is part of your brand.</h2><p className="mt-7 max-w-xl text-lg leading-8 text-ink/75">Customers do not always separate the product from the experience of receiving it. A smooth handoff can make the entire business feel more professional.</p></header><div className="divide-y divide-ink/25 border-y border-ink/25">{brandExperience.map(([title, copy], index) => <article key={title} className="grid grid-cols-[2.5rem_1fr] gap-3 py-6 sm:grid-cols-[3.5rem_0.55fr_1fr] sm:items-center"><span className="text-xs font-bold">0{index + 1}</span><h3 className="font-display text-xl font-bold sm:text-2xl">{title}</h3><p className="col-start-2 text-sm leading-6 text-ink/70 sm:col-start-auto">{copy}</p></article>)}</div></div></Container>
+      <Container>
+        <header className="grid gap-7 lg:grid-cols-[1.4fr_1fr] lg:items-end lg:gap-10 xl:grid-cols-[1.5fr_1fr] xl:gap-16">
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-[0.18em]">The customer remembers the handoff</p>
+            <h2 id="brand-title" className="mt-4 max-w-3xl font-display text-6xl font-bold leading-[1.02] tracking-[-0.06em] sm:text-8xl">Delivery is part of your brand.</h2>
+          </div>
+          <p className="max-w-xl text-lg leading-8 text-ink/75">Customers do not always separate the product from the experience of receiving it. A smooth handoff can make the entire business feel more professional.</p>
+        </header>
+        <div className="mt-12 grid items-center gap-10 sm:mt-16 lg:grid-cols-[1.4fr_1fr] xl:grid-cols-[1.5fr_1fr] xl:gap-16">
+          <div className="relative aspect-[3/2] overflow-hidden">
+            <Image
+              src="/images/business_handoff.png"
+              alt="Sender+ courier handing a package to a business customer"
+              fill
+              sizes="(min-width: 1440px) 768px, (min-width: 1280px) calc(60vw - 96px), (min-width: 1024px) calc(58.333vw - 79.333px), (min-width: 640px) calc(100vw - 64px), calc(100vw - 40px)"
+              className="object-cover"
+            />
+          </div>
+          <div className="divide-y divide-ink/25 border-y border-ink/25">
+            {brandExperience.map(([title, copy], index) => <article key={title} className="grid grid-cols-[2.5rem_1fr] gap-x-3 gap-y-2 py-6 sm:grid-cols-[3.5rem_0.55fr_1fr] sm:items-center lg:grid-cols-[2rem_1fr] lg:items-start lg:py-5"><span className="text-xs font-bold lg:pt-2">0{index + 1}</span><h3 className="font-display text-xl font-bold sm:text-2xl">{title}</h3><p className="col-start-2 text-sm leading-6 text-ink/70 sm:col-start-auto lg:col-start-2">{copy}</p></article>)}
+          </div>
+        </div>
+      </Container>
     </Section>
 
     <Section aria-labelledby="use-cases-title" className="bg-white">
