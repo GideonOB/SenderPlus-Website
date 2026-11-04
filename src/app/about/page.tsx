@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -39,7 +40,25 @@ export default function AboutPage() {
 
     <Section aria-labelledby="founders-title" className="bg-canvas">
       <Container><header className="max-w-4xl"><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-sender-red">Meet the co-founders</p><h2 id="founders-title" className="mt-4 font-display text-5xl font-bold leading-[0.94] tracking-[-0.055em] sm:text-7xl">Three people.<br />One problem worth solving.</h2></header>
-        <div className="mt-14 grid gap-14 md:grid-cols-3 md:gap-8 lg:mt-20 lg:gap-12">{founders.map((founder, index) => <article key={founder.name} className="flex flex-col items-center text-center md:items-start md:text-left"><div className={`relative aspect-square w-full max-w-[18rem] rounded-full border-2 p-3 ${founder.accent}`} aria-hidden="true"><div className="flex h-full w-full items-center justify-center rounded-full bg-mist"><div className="text-center"><span className="block text-4xl font-light text-ink/25">+</span><span className="mt-2 block text-[0.65rem] font-extrabold uppercase tracking-[0.16em] text-charcoal/60">Founder portrait to come</span></div></div><span className={`absolute bottom-[8%] right-[4%] h-5 w-5 rounded-full ${index === 1 ? "bg-sender-red" : "bg-sender-blue"}`} /></div><p className="mt-8 text-xs font-extrabold uppercase tracking-[0.18em] text-sender-red">{founder.role}</p><h3 className="mt-2 font-display text-3xl font-bold leading-tight tracking-[-0.04em]">{founder.name}</h3><p className="mt-5 max-w-sm text-base leading-7 text-charcoal">{founder.bio}</p></article>)}</div>
+        <div className="mt-14 grid gap-14 md:grid-cols-3 md:gap-8 lg:mt-20 lg:gap-12">{founders.map((founder, index) => <article key={founder.name} className="flex flex-col items-center text-center md:items-start md:text-left">
+          <div className={`relative aspect-square w-full max-w-[18rem] rounded-full border-2 p-3 ${founder.accent}`}>
+            {founder.image ? (
+              <div className="relative h-full w-full overflow-hidden rounded-full">
+                <Image
+                  src={founder.image}
+                  alt={founder.imageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 260px, (min-width: 768px) calc(33.333vw - 70.667px), 260px"
+                  className="object-cover object-top"
+                />
+              </div>
+            ) : (
+              <div className="flex h-full w-full items-center justify-center rounded-full bg-mist" aria-hidden="true"><div className="text-center"><span className="block text-4xl font-light text-ink/25">+</span><span className="mt-2 block text-[0.65rem] font-extrabold uppercase tracking-[0.16em] text-charcoal/60">Founder portrait to come</span></div></div>
+            )}
+            <span aria-hidden="true" className={`absolute bottom-[8%] right-[4%] h-5 w-5 rounded-full ${index === 1 ? "bg-sender-red" : "bg-sender-blue"}`} />
+          </div>
+          <p className="mt-8 text-xs font-extrabold uppercase tracking-[0.18em] text-sender-red">{founder.role}</p><h3 className="mt-2 font-display text-3xl font-bold leading-tight tracking-[-0.04em]">{founder.name}</h3><p className="mt-5 max-w-sm text-base leading-7 text-charcoal">{founder.bio}</p>
+        </article>)}</div>
         <figure className="mt-20 grid gap-8 lg:mt-28 lg:grid-cols-[1.3fr_0.7fr] lg:items-end"><div className="relative aspect-[16/10] overflow-hidden rounded-sm border border-ink/20 bg-ink" aria-hidden="true"><div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_48%,rgba(119,196,224,0.18)_48%,rgba(119,196,224,0.18)_52%,transparent_52%)]" /><div className="absolute inset-0 flex items-center justify-center"><div className="text-center text-white"><span className="font-display text-7xl font-light text-sender-blue">+</span><p className="mt-2 text-xs font-extrabold uppercase tracking-[0.18em] text-white/55">Group photograph to come</p></div></div></div><figcaption className="border-t border-ink/25 pt-6"><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-sender-red">The founding team</p><p className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.04em] sm:text-4xl">Three perspectives. One shared problem to solve.</p><p className="mt-5 max-w-lg leading-7 text-charcoal">Gideon, Nancy, and Francis bring different experiences to a shared ambition: make package movement feel simpler for the people who depend on it.</p></figcaption></figure>
       </Container>
     </Section>
