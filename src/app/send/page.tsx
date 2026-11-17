@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import { AppBridge } from "@/components/sections/app-bridge";
+import { redirect } from "next/navigation";
+import { getAppUrl } from "@/lib/app-links";
 
 export const metadata: Metadata = { title: "Send a Package", description: "Continue to the Sender+ app to send a package." };
-export default function SendPage() { return <AppBridge destination="send" title="Where should we take it?" cta="Open Sender+ to Send" />; }
+export default function SendPage() {
+  redirect(getAppUrl("send"));
+}

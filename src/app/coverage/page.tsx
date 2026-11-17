@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { coverageRoadmap } from "@/content/coverage";
+import { getAppUrl } from "@/lib/app-links";
 
 const routes = ["Home → Campus", "Shop → Customer", "Transport terminal → Student", "Business → Buyer", "Friend → Friend"];
 
@@ -23,7 +24,7 @@ export default function CoveragePage() {
         </div>
         <div className="max-w-xl lg:justify-self-end">
           <p className="text-lg leading-8 text-white/72">Sender+ is being built to make package movement simpler between people, campuses, homes, shops, and businesses within supported areas of the same region.</p>
-          <div className="mt-8 flex flex-wrap gap-3"><Button href="/send" className="bg-sender-blue text-ink hover:bg-white">Send a Package</Button><Button href="/track" variant="secondary" className="border-white/35 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div>
+          <div className="mt-8 flex flex-wrap gap-3"><Button href={getAppUrl("send")} className="bg-sender-blue text-ink hover:bg-white">Send a Package</Button><Button href={getAppUrl("track")} variant="secondary" className="border-white/35 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div>
         </div>
       </Container>
     </section>
@@ -56,6 +57,6 @@ export default function CoveragePage() {
       <Container className="relative"><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-sender-blue">Long-term vision</p><div className="mt-5 grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-end"><h2 id="future-title" className="max-w-5xl font-display text-5xl font-bold leading-[0.92] tracking-[-0.055em] sm:text-7xl">Inter-regional delivery infrastructure: <span className="text-sender-blue">loading.</span></h2><p className="max-w-xl text-lg leading-8 text-white/68">Today, the focus is building strong delivery within regions. The longer-term vision is to connect those regional networks and make package movement across Ghana simpler.</p></div><div className="mt-12 h-1 w-full bg-white/15" aria-hidden="true"><div className="h-full w-1/3 bg-sender-blue" /></div><p className="mt-3 text-xs uppercase tracking-[0.16em] text-white/45">Future capability. No launch date announced.</p></Container>
     </Section>
 
-    <Section aria-labelledby="coverage-cta" className="bg-sender-red text-white"><Container className="flex flex-col justify-between gap-9 lg:flex-row lg:items-end"><div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-white/65">The road ahead</p><h2 id="coverage-cta" className="mt-4 max-w-4xl font-display text-6xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-8xl">From one region to a connected Ghana.</h2></div><div className="flex shrink-0 flex-wrap gap-3"><Button href="/send" variant="light">Send a Package</Button><Button href="/track" variant="secondary" className="border-white/40 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div></Container></Section>
+    <Section aria-labelledby="coverage-cta" className="bg-sender-red text-white"><Container className="flex flex-col justify-between gap-9 lg:flex-row lg:items-end"><div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-white/65">The road ahead</p><h2 id="coverage-cta" className="mt-4 max-w-4xl font-display text-6xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-8xl">From one region to a connected Ghana.</h2></div><div className="flex shrink-0 flex-wrap gap-3"><Button href={getAppUrl("send")} variant="light">Send a Package</Button><Button href={getAppUrl("track")} variant="secondary" className="border-white/40 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div></Container></Section>
   </>;
 }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 import { usePathname } from "next/navigation";
 import { primaryNavigation } from "@/content/site";
+import { getAppUrl } from "@/lib/app-links";
 
 export function MobileNavigation() {
   const [open, setOpen] = useState(false);
@@ -25,7 +26,7 @@ export function MobileNavigation() {
     {open && <div id={menuId} className="absolute inset-x-0 top-full border-t border-ink/10 bg-canvas px-5 py-6 shadow-lg">
       <nav aria-label="Mobile navigation" className="flex flex-col">
         {primaryNavigation.map((item) => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined} onClick={() => setOpen(false)} className={`border-b border-ink/10 py-4 font-bold ${pathname === item.href ? "text-sender-red" : "text-ink"}`}>{item.label}</Link>)}
-        <div className="mt-6 grid grid-cols-2 gap-3"><Link href="/track" onClick={() => setOpen(false)} className="flex min-h-12 items-center justify-center rounded-md border border-ink/25 font-bold">Track</Link><Link href="/send" onClick={() => setOpen(false)} className="flex min-h-12 items-center justify-center rounded-md bg-ink font-bold text-white">Send</Link></div>
+        <div className="mt-6 grid grid-cols-2 gap-3"><Link href={getAppUrl("track")} onClick={() => setOpen(false)} className="flex min-h-12 items-center justify-center rounded-md border border-ink/25 font-bold">Track</Link><Link href={getAppUrl("send")} onClick={() => setOpen(false)} className="flex min-h-12 items-center justify-center rounded-md bg-ink font-bold text-white">Send</Link></div>
       </nav>
     </div>}
   </div>;

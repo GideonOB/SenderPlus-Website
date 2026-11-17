@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
+import { getAppUrl } from "@/lib/app-links";
 
 export const metadata: Metadata = {
   title: "For Students",
@@ -69,7 +70,7 @@ export default function StudentsPage() {
     <Section aria-labelledby="student-cta-title" className="bg-canvas">
       <Container className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
         <div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-sender-red">Move with less friction</p><h2 id="student-cta-title" className="mt-4 max-w-3xl font-display text-5xl font-bold leading-[0.95] tracking-[-0.05em] sm:text-6xl">From a package to a semester’s worth of belongings.</h2></div>
-        <Button href="/send" className="shrink-0">Send a Package</Button>
+        <Button href={getAppUrl("send")} className="shrink-0">Send a Package</Button>
       </Container>
     </Section>
   </>;

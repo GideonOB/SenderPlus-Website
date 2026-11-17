@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/sections/contact-form";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
+import { getAppUrl } from "@/lib/app-links";
 
 const faqItems = [
   { question: "What is Sender+?", answer: "Sender+ is a technology-enabled package delivery company being built to help students, businesses, and everyday senders move packages conveniently within supported areas in Ghana, making package sending and delivery effortless." },
@@ -11,8 +12,8 @@ const faqItems = [
   { question: "Will Sender+ offer delivery between regions?", answer: "The initial service model focuses on delivery within individual regions. Inter-regional delivery is part of Sender+’s longer-term vision as the regional network grows. Inter-regional delivery infrastructure: loading." },
   { question: "Can students use Sender+?", answer: "Yes. Students are one of Sender+’s core audiences. The service is being built for packages, bags, foodstuffs, personal belongings, and other campus-related delivery needs within supported areas.", link: { href: "/students", label: "Explore Sender+ for Students" } },
   { question: "Can businesses use Sender+?", answer: "Yes. Sender+ is designed to help online sellers, shops, entrepreneurs, SMEs, and growing businesses move customer orders within supported areas.", link: { href: "/business", label: "Explore Sender+ for Business" } },
-  { question: "How do I send a package?", answer: "Continue to the standalone Sender+ sending experience to get started.", link: { href: "/send", label: "Send a Package" } },
-  { question: "How do I track a package?", answer: "Continue to the standalone Sender+ tracking experience to follow your package.", link: { href: "/track", label: "Track a Package" } },
+  { question: "How do I send a package?", answer: "Continue to the standalone Sender+ sending experience to get started.", link: { href: getAppUrl("send"), label: "Send a Package" } },
+  { question: "How do I track a package?", answer: "Continue to the standalone Sender+ tracking experience to follow your package.", link: { href: getAppUrl("track"), label: "Track a Package" } },
   { question: "What can I send?", answer: "Package requirements and accepted-item guidance will be provided as Sender+ service policies are finalized. Sender+ should not be used to transport prohibited, illegal, dangerous, or restricted items." },
 ] as const;
 

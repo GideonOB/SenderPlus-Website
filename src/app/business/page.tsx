@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
+import { getAppUrl } from "@/lib/app-links";
 
 const orderQuestions = [
   "Order received.",
@@ -76,7 +77,7 @@ export default function BusinessPage() {
           </div>
           <div className="max-w-xl border-t border-white/20 pt-7 lg:mb-2 lg:justify-self-end">
             <p className="text-lg leading-8 text-white/72">Sender+ helps online sellers, shops, entrepreneurs, and growing businesses move customer orders more conveniently within supported areas.</p>
-            <div className="mt-8 flex flex-wrap gap-3"><Button href="/send" className="bg-sender-red hover:bg-white hover:text-ink">Send a Package</Button><Button href="/track" variant="secondary" className="border-white/35 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div>
+            <div className="mt-8 flex flex-wrap gap-3"><Button href={getAppUrl("send")} className="bg-sender-red hover:bg-white hover:text-ink">Send a Package</Button><Button href={getAppUrl("track")} variant="secondary" className="border-white/35 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div>
           </div>
         </div>
       </Container>
@@ -152,7 +153,7 @@ export default function BusinessPage() {
     </Section>
 
     <Section aria-labelledby="business-cta-title" className="bg-ink text-white">
-      <Container><div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-sender-blue">Start with the next order</p><h2 id="business-cta-title" className="mt-4 max-w-4xl font-display text-6xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-8xl">Your next order has somewhere to go.</h2><p className="mt-7 max-w-xl text-lg leading-8 text-white/65">Start a delivery with Sender+ and keep your attention where it belongs: on the business.</p></div><div className="flex flex-wrap gap-3"><Button href="/send" className="bg-sender-blue text-ink hover:bg-white">Send a Package</Button><Button href="/track" variant="secondary" className="border-white/35 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div></div></Container>
+      <Container><div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end"><div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-sender-blue">Start with the next order</p><h2 id="business-cta-title" className="mt-4 max-w-4xl font-display text-6xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-8xl">Your next order has somewhere to go.</h2><p className="mt-7 max-w-xl text-lg leading-8 text-white/65">Start a delivery with Sender+ and keep your attention where it belongs: on the business.</p></div><div className="flex flex-wrap gap-3"><Button href={getAppUrl("send")} className="bg-sender-blue text-ink hover:bg-white">Send a Package</Button><Button href={getAppUrl("track")} variant="secondary" className="border-white/35 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div></div></Container>
     </Section>
   </>;
 }

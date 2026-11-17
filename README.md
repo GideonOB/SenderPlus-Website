@@ -35,8 +35,8 @@ Everyday individual senders are also part of the market.
 - `/coverage` — Coverage
 - `/about` — About Sender+
 - `/help` — Help and Contact
-- `/send` — Bridge to existing Sender+ app
-- `/track` — Bridge to existing Sender+ app
+- `/send` — Legacy redirect to the Sender+ app's `/submit` route
+- `/track` — Legacy redirect to the Sender+ app's `/track` route
 
 ## Intended stack
 
@@ -73,7 +73,9 @@ Do not commit `.env.local` or other secret-bearing environment files.
 
 See `.env.example` for the committed template.
 
-Configure this public variable manually in the marketing website's Netlify environment settings before building and deploying. `SenderPlus-Website` hands off to the standalone operational app at `https://senderplus.netlify.app`: `/send` links to `/submit`, and `/track` links to `/track`. Both app routes require authentication. If the variable is unset, the bridge pages show an app-link-unavailable message.
+Configure this public variable manually in the marketing website's Netlify environment settings before building and deploying. All Send and Track actions use `getAppUrl()` from `src/lib/app-links.ts` to open the standalone app's `/submit` and `/track` routes directly in the same tab. Existing website `/send` and `/track` URLs immediately redirect to those app routes using Next.js server redirects, without an intermediary page. Both app routes require authentication, which the standalone app handles.
+
+`NEXT_PUBLIC_APP_URL` is required and must be an absolute HTTP(S) base URL without a query string or fragment. Missing, blank, or invalid values cause a clear configuration error during development or build instead of rendering broken links or redirecting to an invalid destination. Whitespace and a trailing slash are trimmed centrally. To move the app to another domain, update this variable and rebuild the marketing website.
 
 ## Existing app boundary
 
