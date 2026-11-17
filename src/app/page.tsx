@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
+import { getAppUrl } from "@/lib/app-links";
 
 const promise = [
   { number: "01", title: "Pickup", copy: "We collect your package." },
@@ -37,7 +38,7 @@ export default function Home() {
           <p className="mb-6 text-xs font-bold uppercase tracking-[0.2em] text-sender-blue">Delivery, built for your region</p>
           <h1 className="max-w-3xl font-display text-[clamp(3.45rem,8vw,7.9rem)] font-bold leading-[0.86] tracking-[-0.065em] text-balance">Your package.<br /><span className="text-sender-blue">Anywhere</span> in your region.<br /><span className="text-sender-red">Delivered.</span></h1>
           <p className="mt-8 max-w-xl text-base leading-7 text-white/72 sm:text-lg sm:leading-8">Fast, secure, tech-enabled package delivery built for students, businesses, and everyday senders in Ghana.</p>
-          <div className="mt-9 flex flex-wrap gap-3"><Button href="/send" className="bg-sender-blue text-ink hover:bg-white">Send a Package</Button><Button href="/track" variant="secondary" className="border-white/30 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div>
+          <div className="mt-9 flex flex-wrap gap-3"><Button href={getAppUrl("send")} className="bg-sender-blue text-ink hover:bg-white">Send a Package</Button><Button href={getAppUrl("track")} variant="secondary" className="border-white/30 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div>
         </div>
         <div className="relative -mx-5 h-[clamp(17rem,68vw,32rem)] overflow-hidden sm:-mx-8 md:h-[32rem] lg:mx-0 lg:h-[calc(100svh-5rem)] lg:min-h-[650px]">
           <Image src="/images/hero-package.jpg" alt="A Sender+ delivery representative holding a package beside a branded delivery vehicle" fill priority sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover object-[48%_center] sm:object-[50%_center] lg:object-[47%_center] xl:object-center" />
@@ -73,7 +74,7 @@ export default function Home() {
     </Section>
 
     <Section aria-labelledby="app-title" className="overflow-hidden bg-ink text-white">
-      <Container><div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24"><div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-sender-blue">Sender+ digital experience</p><h2 id="app-title" className="mt-4 font-display text-6xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-7xl">Delivery, right in your hands.</h2><p className="mt-7 max-w-lg text-lg leading-8 text-white/68">Manage your delivery through the standalone Sender+ experience. The website keeps the handoff simple, so you can continue where sending and tracking happen.</p><Button href="/send" className="mt-9 bg-sender-blue text-ink hover:bg-white">Open Sender+</Button></div>
+      <Container><div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24"><div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-sender-blue">Sender+ digital experience</p><h2 id="app-title" className="mt-4 font-display text-6xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-7xl">Delivery, right in your hands.</h2><p className="mt-7 max-w-lg text-lg leading-8 text-white/68">Manage your delivery through the standalone Sender+ experience. The website keeps the handoff simple, so you can continue where sending and tracking happen.</p><Button href={getAppUrl("send")} className="mt-9 bg-sender-blue text-ink hover:bg-white">Open Sender+</Button></div>
       <div className="relative mx-auto w-full max-w-md py-6" aria-label="Presentation placeholder for the Sender+ digital experience"><div className="absolute inset-y-0 left-1/2 w-px bg-sender-blue/30" /><div className="relative ml-auto w-[82%] border border-white/20 bg-white p-5 text-ink shadow-2xl sm:p-7"><div className="flex items-center justify-between border-b border-ink/15 pb-5"><Image src="/brand/senderplus-logo.png" alt="Sender+" width={784} height={303} className="h-auto w-24" /><span className="h-2 w-2 rounded-full bg-sender-blue" /></div><div className="py-12 sm:py-16"><p className="text-xs font-bold uppercase tracking-[0.18em] text-sender-red">Your delivery</p><p className="mt-3 font-display text-3xl font-bold tracking-[-0.045em]">Ready when you are.</p><div className="mt-10 h-1 w-full bg-mist"><div className="h-full w-2/3 bg-sender-blue" /></div></div><p className="border-t border-ink/15 pt-5 text-xs text-charcoal">Presentation placeholder · App visuals to come</p></div></div></div></Container>
     </Section>
 
@@ -82,7 +83,7 @@ export default function Home() {
     </Section>
 
     <Section aria-labelledby="final-title" className="bg-sender-red text-white">
-      <Container><div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end"><div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-white/70">Start a delivery</p><h2 id="final-title" className="mt-4 font-display text-7xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-8xl">Ready to send?</h2></div><div className="flex flex-wrap gap-3"><Button href="/send" variant="light">Send a Package</Button><Button href="/track" variant="secondary" className="border-white/40 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div></div></Container>
+      <Container><div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end"><div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-white/70">Start a delivery</p><h2 id="final-title" className="mt-4 font-display text-7xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-8xl">Ready to send?</h2></div><div className="flex flex-wrap gap-3"><Button href={getAppUrl("send")} variant="light">Send a Package</Button><Button href={getAppUrl("track")} variant="secondary" className="border-white/40 text-white hover:border-white hover:bg-white hover:text-ink">Track a Package</Button></div></div></Container>
     </Section>
   </>;
 }

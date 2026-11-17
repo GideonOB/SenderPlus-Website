@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { founders } from "@/content/founders";
+import { getAppUrl } from "@/lib/app-links";
 
 const audiences = ["Students", "Families", "Everyday senders", "Online sellers", "Shops", "Entrepreneurs", "Growing businesses"];
 
@@ -79,6 +80,6 @@ export default function AboutPage() {
       <div aria-hidden="true" className="absolute -bottom-44 right-0 font-display text-[24rem] font-black leading-none text-white/20">+</div><Container className="relative"><p className="text-xs font-extrabold uppercase tracking-[0.18em]">The vision</p><div className="mt-4 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end"><h2 id="vision-title" className="max-w-5xl font-display text-6xl font-bold leading-[0.88] tracking-[-0.065em] sm:text-8xl">Building toward a more connected Ghana.</h2><div className="max-w-lg"><p className="text-lg leading-8 text-ink/75">Sender+ begins with focused regional delivery, with a broader ambition to help connect Ghana through a delivery network that grows thoughtfully over time.</p><p className="mt-8 font-display text-2xl font-bold leading-tight">Bridging Ghana One Package at a Time.</p></div></div></Container>
     </Section>
 
-    <Section aria-labelledby="about-cta" className="bg-sender-red text-white"><Container className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end"><div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-white/65">Keep moving</p><h2 id="about-cta" className="mt-4 max-w-4xl font-display text-6xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-8xl">There is more to the journey.</h2></div><div className="flex shrink-0 flex-wrap gap-3"><Button href="/send" variant="light">Send a Package</Button><Button href="/coverage" variant="secondary" className="border-white/40 text-white hover:border-white hover:bg-white hover:text-ink">Explore Coverage</Button></div></Container></Section>
+    <Section aria-labelledby="about-cta" className="bg-sender-red text-white"><Container className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end"><div><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-white/65">Keep moving</p><h2 id="about-cta" className="mt-4 max-w-4xl font-display text-6xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-8xl">There is more to the journey.</h2></div><div className="flex shrink-0 flex-wrap gap-3"><Button href={getAppUrl("send")} variant="light">Send a Package</Button><Button href="/coverage" variant="secondary" className="border-white/40 text-white hover:border-white hover:bg-white hover:text-ink">Explore Coverage</Button></div></Container></Section>
   </>;
 }
